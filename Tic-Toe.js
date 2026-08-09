@@ -7,7 +7,7 @@ let msg = document.querySelector("#msg");
 
 
 let turnO =true;  // player X , player O
-
+// these are posssibilities which decides winner . A winner can declared when all the elements are same whether in horizontal , vertical  or diagonally
 const winPatterns =[
     [0,1,2],
     [0,3,6],
@@ -22,6 +22,7 @@ const winPatterns =[
 const resetGame =() =>{
         turnO = true;
         enableBoxes();
+    // msg container will be hidden only show when winner will be declared .
         msgContainer.classList.add("hide");
       }
    
@@ -45,6 +46,8 @@ boxes.forEach((box) =>{
         checkWinner();
          });
     });
+
+// after winner is declared ohter boxes will be disabled not to play further . 
 const disableBoxes =() =>{
     for (let box of boxes){
         box.disabled = true;
